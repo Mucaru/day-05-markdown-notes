@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📝 MarkNotes
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js_15-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Vercel](https://img.shields.io/badge/Deployed_on_Vercel-000?style=flat-square&logo=vercel)
+![Day](https://img.shields.io/badge/100_Days_Challenge-Day_05-orange?style=flat-square)
 
-First, run the development server:
+> Editor markdown minimalis dengan live preview — tulis di kiri, lihat hasilnya di kanan, simpan otomatis.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Fitur
+
+- ✍️ Editor markdown dengan live preview split-pane
+- 💾 Auto-save ke localStorage — tidak ada tombol save
+- 📁 Multi-note — buat, hapus, dan kelola banyak catatan
+- 📤 Export note ke file `.md` dengan satu klik
+- 🔀 Toggle view: editor only / split / preview only
+- 📱 Responsif — sidebar drawer + panel toggle di mobile
+- ⏱️ Timestamp "time ago" di setiap note
+
+## 🛠️ Tech Stack
+
+| Teknologi | Kegunaan |
+|---|---|
+| Next.js 15 (App Router) | Framework utama |
+| TypeScript | Type safety |
+| Tailwind CSS v4 | Styling |
+| react-markdown | Render markdown ke HTML |
+| remark-gfm | Support GFM (table, checkbox, strikethrough) |
+| localStorage | Persistensi data tanpa backend |
+| Vercel | Deployment |
+
+## 📁 Struktur Folder
+
+```
+app/
+  layout.tsx              # Root layout + Google Fonts
+  page.tsx                # Halaman utama + responsive logic
+  globals.css             # Global styles + markdown preview styles
+components/
+  Sidebar.tsx             # Daftar note + new + delete
+  Editor.tsx              # Textarea markdown + word/char count
+  Preview.tsx             # Rendered markdown dengan react-markdown
+  Toolbar.tsx             # Toggle view + export .md
+hooks/
+  useNotes.ts             # CRUD notes + localStorage sync
+lib/
+  exportMd.ts             # Helper export file .md
+types/
+  note.ts                 # Type Note
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Jalankan Lokal
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+git clone https://github.com/Mucaru/day-05-markdown-notes.git
+cd day-05-markdown-notes
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Buka `http://localhost:3000`
 
-## Learn More
+## 🌐 Live Demo
 
-To learn more about Next.js, take a look at the following resources:
+**[day-05-markdown-notes.vercel.app](https://day-05-markdown-notes.vercel.app)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bagian dari tantangan [100 Hari 100 Web App](https://github.com/Mucaru) · Day 05 of 100
